@@ -1,3 +1,3 @@
-import TextLoop from "./components/TextLoop";
+import {TextLoop, Axis} from "./components/TextLoop";
 
-export default TextLoop;
+export {Axis, TextLoop};

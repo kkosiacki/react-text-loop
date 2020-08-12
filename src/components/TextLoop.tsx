@@ -9,6 +9,11 @@ import cxs from "cxs";
 import isEqual from "react-fast-compare";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "../utils";
 
+enum Axis {
+  X = "X",
+  Y = "Y",
+}
+
 type Props = {
     children?: (JSX.Element | string)[];
     interval: number | number[];
@@ -20,8 +25,9 @@ type Props = {
     };
     fade: boolean;
     mask: boolean;
+    axis: string;
     noWrap: boolean;
-    className?: string;
+    className?: Axis;
     onChange?: Function;
 };
 
@@ -50,6 +56,7 @@ class TextLoop extends React.PureComponent<Props, State> {
         fade: true,
         mask: false,
         noWrap: true,
+        axis: Axis.X,
     };
 
     constructor(props: Props) {
@@ -273,7 +280,7 @@ class TextLoop extends React.PureComponent<Props, State> {
                                         key={config.key}
                                         style={{
                                             opacity: config.style.opacity,
-                                            transform: `translateY(${config.style.translate}px)`,
+                                            transform: `translate${this.props.axis}(${config.style.translate}px)`,
                                             position:
                                                 this.wordBox == null
                                                     ? "relative"
@@ -292,4 +299,4 @@ class TextLoop extends React.PureComponent<Props, State> {
     }
 }
 
-export default TextLoop;
+export {TextLoop,Axis};
