@@ -59,6 +59,7 @@ class App extends Component {
 | noWrap           | boolean         | `true`                           | Disable `whitepace: nowrap` style for each element. This is used by default so we can always get the right width of the element but can have issues sometimes. |
 | springConfig   | object          | `{ stiffness: 340, damping: 30 }` | Configuration for [react-motion spring](https://github.com/chenglou/react-motion#--spring-val-number-config-springhelperconfig--opaqueconfig) |
 | className | string | | Any additional CSS classes you might want to use to style the image |
+| axis | Axis | Axis.Y | Transition axis, available values Axis.X or Axis.Y |
 | children       | node            |                                   | The words you want to loop (required)                                                                                                         |
 
 ### Caveats
