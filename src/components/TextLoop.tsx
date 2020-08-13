@@ -9,7 +9,7 @@ import cxs from "cxs";
 import isEqual from "react-fast-compare";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "../utils";
 
-enum Axis {
+export enum Axis {
   X = "X",
   Y = "Y",
 }
@@ -32,14 +32,14 @@ type Props = {
 };
 
 type State = {
-    elements: (JSX.Element | string | undefined)[];
-    currentEl: JSX.Element | string | undefined;
+    elements: (JSX.Element | string | number | {} | undefined)[];
+    currentEl: JSX.Element | string | number | {} |undefined;
     currentWordIndex: number;
     wordCount: number;
     currentInterval: number;
 };
 
-class TextLoop extends React.PureComponent<Props, State> {
+export class TextLoop extends React.PureComponent<Props, State> {
     isUnMounting = false;
 
     tickDelay: RequestTimeout = 0;
@@ -298,5 +298,3 @@ class TextLoop extends React.PureComponent<Props, State> {
         );
     }
 }
-
-export {TextLoop,Axis};

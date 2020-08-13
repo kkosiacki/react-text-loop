@@ -6,6 +6,7 @@
     "module": "es/index.js",
     "sideEffects": false,
     "scripts": {
+        "install": "npm run build",
         "build": "run-p build:commonjs build:es build:umd build:umd:min build:ts build:ts-es",
         "build:es": "babel src -d es --extensions .ts,.tsx",
         "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx",
