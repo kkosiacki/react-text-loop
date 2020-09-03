@@ -9,10 +9,6 @@ import cxs from "cxs";
 import isEqual from "react-fast-compare";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "../utils";
 
-export enum Axis {
-  X = "X",
-  Y = "Y",
-}
 
 type Props = {
     children?: (JSX.Element | string)[];
@@ -27,7 +23,7 @@ type Props = {
     mask: boolean;
     axis: string;
     noWrap: boolean;
-    className?: Axis;
+    className?: string;
     onChange?: Function;
 };
 
@@ -56,7 +52,7 @@ export class TextLoop extends React.PureComponent<Props, State> {
         fade: true,
         mask: false,
         noWrap: true,
-        axis: Axis.X,
+        axis: 'X',
     };
 
     constructor(props: Props) {
